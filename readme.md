@@ -44,6 +44,9 @@ Swagger (OpenAPI 3.0) is used for API documentation and API testing.
 
 Swagger UI URL:
 http://localhost:8081/swagger-ui/index.html
+Like this:
+<img width="1533" height="767" alt="image" src="https://github.com/user-attachments/assets/8507f85e-5116-4040-8b27-1d46532fc0e1" />
+
 
 ## Installation and Setup
 
