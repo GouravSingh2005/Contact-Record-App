@@ -65,7 +65,7 @@ Like this:
 
 ### Frontend Setup
 1. Navigate to frontend folder
-   cd 'Contact-app Front'
+   cd 'Contact-app Front' and then 
    cd frontend
 2. Install dependencies
    npm install
