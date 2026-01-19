@@ -94,7 +94,7 @@ import { AuthService } from '../services/authservice';
               class="btn-submit"
               [disabled]="profileForm.invalid || loading">
               <span *ngIf="!loading">Update Profile</span>
-              <span *ngIf="loading">⏳ Updating...</span>
+              <span *ngIf="loading"> Updating...</span>
             </button>
 
             <button
@@ -358,8 +358,7 @@ export class UpdateProfileComponent implements OnInit {
     this.loading = true;
 
     const token = this.authService.getToken();
-    console.log('🔍 Token exists:', !!token);
-    console.log('🔍 Token value:', token);
+    
     if (!token) {
       this.errorMessage = 'Authentication token not found. Please login again.';
       this.loading = false;
@@ -379,7 +378,7 @@ export class UpdateProfileComponent implements OnInit {
 
     this.authService.updateProfile(updateData).subscribe({
       next: (response) => {
-        console.log('✅ Profile updated successfully:', response);
+        console.log('Profile updated successfully:', response);
         
    
         const updatedUser = {
@@ -397,9 +396,9 @@ export class UpdateProfileComponent implements OnInit {
         }, 1500);
       },
       error: (err) => {
-        console.error('❌ Profile update error:', err);
-        console.error('❌ Error status:', err.status);
-        console.error('❌ Error message:', err.error);
+        console.error('Profile update error:', err);
+        console.error('Error status:', err.status);
+        console.error(' Error message:', err.error);
         
         if (err.status === 403) {
           this.errorMessage = 'Access denied. Please logout and login again.';

@@ -13,7 +13,7 @@ The application allows users to register, login, and manage their personal conta
  - Contact-app Front -> frontend -> Frontend is built using Angular 
 
  ## Technology Stack 
- 
+
  ### Frontend
 - Angular
 - Bootstrap
@@ -44,6 +44,7 @@ Swagger (OpenAPI 3.0) is used for API documentation and API testing.
 
 Swagger UI URL:
 http://localhost:8081/swagger-ui/index.html
+ like this 
 
 ## Installation and Setup
 

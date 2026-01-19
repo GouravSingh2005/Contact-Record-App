@@ -40,9 +40,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
 
-        System.out.println("=== JWT FILTER HIT ===");
-        System.out.println("Request URI: " + request.getRequestURI());
-        System.out.println("HTTP Method: " + request.getMethod());
 
         String authHeader = request.getHeader("Authorization");
         System.out.println("Authorization Header: " + authHeader);
@@ -50,7 +47,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
 
             String token = authHeader.substring(7);
-            System.out.println("Extracted Token: " + token);
+       
 
             try {
                 Long userId = JwtUtil.extractUserId(token);

@@ -380,17 +380,17 @@ export class AddContactComponent implements OnInit {
 
     
     if (this.editId) {
-      console.log('📝 Updating contact:', this.contact);
+      console.log(' Updating contact:', this.contact);
       this.contactService.update(this.editId, this.contact)
         .subscribe({
           next: () => {
-            console.log('✅ Contact updated, emitting contactsChanged');
+            console.log(' Contact updated, emitting contactsChanged');
             this.successMessage = 'Contact updated successfully!';
             this.contactService.contactsChanged.next();
             setTimeout(() => this.router.navigate(['/dashboard']), 1500);
           },
           error: (err: any) => {
-            console.error('❌ Update failed', err);
+            console.error(' Update failed', err);
             this.loading = false;
             this.errorMessage = err.error?.message || 'Failed to update contact. Please try again.';
           }
@@ -402,13 +402,13 @@ export class AddContactComponent implements OnInit {
       this.contactService.add(this.contact)
         .subscribe({
           next: () => {
-            console.log('✅ Contact added, emitting contactsChanged');
+            console.log('Contact added, emitting contactsChanged');
             this.successMessage = 'Contact added successfully!';
             this.contactService.contactsChanged.next();
             setTimeout(() => this.router.navigate(['/dashboard']), 1500);
           },
           error: (err: any) => {
-            console.error('❌ Add failed', err);
+            console.error(' Add failed', err);
             this.loading = false;
             this.errorMessage = err.error?.message || 'Failed to add contact. Please try again.';
           }

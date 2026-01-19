@@ -18,13 +18,13 @@ import { AuthService } from '../services/authservice';
 
         <h3 class="text-center mb-3">Register</h3>
 
-        <!-- ERROR MESSAGE -->
+  
         <div *ngIf="errorMessage"
              class="alert alert-danger py-2">
           {{ errorMessage }}
         </div>
 
-        <!-- NAME -->
+        
         <input
           type="text"
           class="form-control mb-2"
@@ -36,7 +36,7 @@ import { AuthService } from '../services/authservice';
           Name is required
         </small>
 
-        <!-- EMAIL -->
+ 
         <input
           type="email"
           class="form-control mt-3 mb-2"
@@ -48,7 +48,7 @@ import { AuthService } from '../services/authservice';
           Email is required
         </small>
 
-        <!-- PASSWORD -->
+        
         <input
           type="password"
           class="form-control mt-3 mb-2"
@@ -60,7 +60,6 @@ import { AuthService } from '../services/authservice';
           Password is required
         </small>
 
-        <!-- REGISTER BUTTON -->
         <button
           type="button"
           class="btn btn-success w-100 mt-3"

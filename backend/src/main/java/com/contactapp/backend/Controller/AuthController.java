@@ -23,9 +23,6 @@ public class AuthController {
     @PostMapping("/register")
     public User register(@Valid @RequestBody User user) {
 
-        System.out.println("=== REGISTER API HIT ===");
-        System.out.println("Email: " + user.getEmail());
-
         if (userRepository.findByEmail(user.getEmail()).isPresent()) {
             throw new RuntimeException("Email already registered");
         }
@@ -40,15 +37,10 @@ public class AuthController {
     @PostMapping("/login")
     public String login(@RequestBody User loginUser) {
 
-        System.out.println("=== LOGIN API HIT ===");
-        System.out.println("Login email: " + loginUser.getEmail());
-        System.out.println("Login password: " + loginUser.getPassword());
+ 
 
         User dbUser = userRepository.findByEmail(loginUser.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
-
-        System.out.println("DB user ID: " + dbUser.getId());
-        System.out.println("DB password: " + dbUser.getPassword());
 
         if (!dbUser.getPassword().equals(loginUser.getPassword())) {
             System.out.println(" PASSWORD MISMATCH");
@@ -57,8 +49,7 @@ public class AuthController {
 
         String token = JwtUtil.generateToken(dbUser.getId());
 
-        System.out.println("LOGIN SUCCESS");
-        System.out.println("Generated JWT Token: " + token);
+    
 
         return token;
     }
@@ -67,12 +58,11 @@ public class AuthController {
     @PutMapping("/profile")
     public User updateProfile(@RequestBody User updatedUser) {
 
-        System.out.println("=== UPDATE PROFILE API HIT ===");
+    
 
         Authentication authentication =
                 SecurityContextHolder.getContext().getAuthentication();
 
-        System.out.println("Authentication object: " + authentication);
 
         if (authentication == null) {
             System.out.println(" Authentication is NULL");
